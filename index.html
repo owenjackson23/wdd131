@@ -4,11 +4,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>document</title>
+    <title>WDD 131 - Dynamic Web Fundamentals - Owen Jackson</title>
+    <meta name="description" content="Owen Jackson's homepage for WDD 131 - Dynamic Web 
+    Fundamentals, including a brief biography and links to projects and other information.">
+    <meta name="author" content="Owen Jackson">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
+    <script src="scripts/getdates.js" defer></script>
 </head>
 
 <body>
-    <h1>Hello, World!</h1>
+    <header>
+        <span id="course-title">WDD 131 - Dynamic Web Fundamentals - Owen Jackson</span>
+        <nav>
+            <ul>
+                <li><a href="https://www.linkedin.com/in/owen-jackson-2125082b4/">LinkedIn</a></li>
+                <li><a href="https://byupw.instructure.com/">Canvas</a></li>
+                <li><a
+                        href="https://www.churchofjesuschrist.org/study/scriptures/nt/acts/17?lang=eng&id=p28-p29#p28">Scripture</a>
+                </li>
+                <li><a href="#">Final Project</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Owen Jackson</h1>
+        <section class="card">
+            <h2>About Me</h2>
+            <div class="card-grid">
+                <img src="images/owen-jackson-profile.jpg" alt="Owen Jackson" width="500">
+                <p>
+                    I am currently pursuing a bachelor's degree in Computer Science.
+                    I enjoy solving difficult problems, which is one of the reasons
+                    that I enjoy programming and web development.
+                    In my free time, I like to play video games and watch movies with my wife.
+                </p>
+                <p>
+                    Much of my motivation in life comes from my incredible wife, McKenzie.
+                    We help each other to see our own potential and help each other to grow.
+                </p>
+                <img src="images/mckenzie-owen.jpg" alt="Owen and McKenzie" width="500">
+            </div>
+        </section>
+        <section class="card">
+            <h2>Web Dev Resources</h2>
+            <ul>
+                <li><a href="https://developer.mozilla.org/en-US/">MDN Web Docs</a></li>
+                <li><a href="https://www.w3schools.com/">W3Schools</a></li>
+                <li><a href="https://css-tricks.com/">CSS-Tricks</a></li>
+                <li><a href="https://stackoverflow.com/">Stack Overflow</a></li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>
+            &copy;<span id="currentyear"></span> Owen Jackson, Arizona, USA
+        </p>
+        <p id="lastModified"></p>
+    </footer>
 
 </body>
 
