@@ -12,7 +12,7 @@ button.addEventListener("click", function () {
         const deleteButton = document.createElement("button");
         deleteButton.textContent = "❌";
         // Delete chapter
-        deletebutton.addEventListener("click", function () {
+        deleteButton.addEventListener("click", function () {
             list.removeChild(li);
             input.focus();
         });
