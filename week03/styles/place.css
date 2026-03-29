@@ -1,0 +1,24 @@
+:root {
+    --back-clr-prim: #0073ff;
+    --back-clr-sec: #fffb8b;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Default (mobile view) */
+
+
+/* Wide Screen */
+@media (min-width: 500px) {
+    .weather img {
+        display: none;
+    }
+
+    .weather h2::after {
+        content: "⛅";
+    }
+}
