@@ -2,6 +2,7 @@
     --clr-prim: #0048a0;
     --clr-sec: #ffe9ab;
     --clr-div: #ffe9ab7d;
+    --clr-hero: #ffe9abdc;
     --max-width-hero: 900px;
 }
 
@@ -93,10 +94,12 @@ footer {
     .data,
     .weather {
         margin-top: 0;
-        padding: .5rem;
+        padding: 0;
         right: 1rem;
         width: 220px;
-        font-size: 0.8rem;
+        font-size: 0.9rem;
+        background-color: var(--clr-hero);
+        border-radius: .5rem;
         position: absolute;
     }
 
