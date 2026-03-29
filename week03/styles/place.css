@@ -2,6 +2,7 @@
     --clr-prim: #0048a0;
     --clr-sec: #ffe9ab;
     --clr-div: #ffe9ab7d;
+    --max-width-hero: 900px;
 }
 
 * {
@@ -35,8 +36,7 @@ footer {
 }
 
 .hero img {
-    max-width: var(--max-width-hero);
-    width: calc(100% - 2rem);
+    width: min(var(--max-width-hero), 100vw - 2rem);
     margin: 0 auto;
     display: block;
 }
@@ -44,6 +44,7 @@ footer {
 .data,
 .weather {
     margin-top: 1rem;
+    margin-inline: auto;
     text-align: center;
     background-color: var(--clr-div);
     color: #000;
@@ -64,16 +65,7 @@ footer {
 
 
 /* Wide Screen */
-@media (min-width: 500px) {
-    :root {
-        --max-width-hero: 900px;
-        --size-rel-hero: calc(min(var(--max-width-hero), 100vw - 2rem));
-        --left-pos-rel-hero: calc(((100vw + var(--size-rel-hero)) / 2 - var(--size-rel-hero) * 0.25) - 10px);
-    }
-
-    main {
-        position: relative;
-    }
+@media (min-width: 615px) {
 
     .weather img {
         display: none;
@@ -83,31 +75,41 @@ footer {
         content: "⛅";
     }
 
-    .hero img {
+    .hero-wrapper {
+        --hero-size: min(var(--max-width-hero), 100vw - 2rem);
+        --weather-block-height: clamp(8.5rem, 14vw, 10.5rem);
+
+        width: var(--hero-size);
+        margin-inline: auto;
         position: relative;
+    }
+
+    .hero img {
+        width: min(var(--max-width-hero), 100vw - 2rem);
+        margin: 0 auto;
+        display: block;
     }
 
     .data,
     .weather {
         margin-top: 0;
-        padding: .2rem;
-        max-width: var(--max-width-hero);
-        width: calc(var(--size-rel-hero) * 0.25);
+        padding: .5rem;
+        right: 1rem;
+        width: 220px;
+        font-size: 0.8rem;
         position: absolute;
-        font-size: calc(var(--size-rel-hero) * 0.015);
-        left: var(--left-pos-rel-hero);
     }
 
     .data {
-        bottom: calc((var(--size-rel-hero) * 0.25));
+        bottom: 10.5rem;
     }
 
     .weather {
-        bottom: 10px;
+        bottom: 1rem;
     }
 
     .data ul,
     .weather ul {
-        padding: calc(var(--size-rel-hero) * 0.015);
+        padding: calc(var(--hero-size) * 0.015);
     }
 }
