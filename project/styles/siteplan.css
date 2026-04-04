@@ -1,0 +1,145 @@
+:root {
+    --back-clr: #000;
+    --back-clr-alt: #111;
+    --clr-heading: #e6d436;
+    --clr-link: #fdef6c;
+    --clr-text: #eee;
+    --clr-darkside: #d92424;
+    --clr-lightside: #7069f9;
+    --font-heading: 'Orbitron', sans-serif;
+    --font-body: 'Zen Kaku Gothic New', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--back-clr);
+    color: var(--clr-text);
+    font-family: var(--font-body);
+}
+
+footer {
+    margin: 3rem 0;
+    text-align: center;
+}
+
+footer p {
+    max-width: 400px;
+    margin: 0 auto;
+    border: 1px solid var(--clr-darkside);
+    border-radius: .5rem;
+    font-size: .9rem;
+    background-color: var(--back-clr-alt);
+    color: var(--clr-text);
+}
+
+h1,
+h2,
+h3 {
+    color: var(--clr-heading);
+    font-family: var(--font-heading);
+}
+
+h1 {
+    font-size: 3rem;
+    margin: 1rem auto;
+    text-align: center;
+    border: 1px solid var(--clr-heading);
+    border-radius: .5rem;
+    padding: .2rem 1rem;
+    width: fit-content;
+}
+
+h2,
+h3 {
+    margin: 0 2rem;
+}
+
+p {
+    margin: 1rem 4rem 0;
+    padding: 1rem;
+    border: 1px solid var(--clr-lightside);
+    border-radius: .5rem;
+    background-color: var(--back-clr-alt);
+}
+
+section {
+    margin: 3rem 2rem 0;
+}
+
+ul {
+    margin: 1rem 4rem 0;
+    padding: .5rem 1rem .5rem 2rem;
+    border: 1px solid var(--clr-lightside);
+    border-radius: .5rem;
+    background-color: var(--back-clr-alt);
+}
+
+li {
+    margin: .5rem 0;
+    list-style: circle;
+}
+
+a {
+    color: var(--clr-heading);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--clr-text);
+}
+
+@media (min-width: 600px) {
+    .square {
+        display: grid;
+        grid-template: 1fr 1fr / 1fr 1fr;
+        gap: 1rem;
+    }
+
+    .square section {
+        background-color: var(--back-clr-alt);
+        border: 1px solid var(--clr-lightside);
+        border-radius: .5rem;
+        padding: 1rem;
+    }
+
+    .square p,
+    .square ul {
+        border: none;
+        border-radius: 0;
+        margin: 0;
+    }
+
+    h2,
+    h3 {
+        text-align: center;
+    }
+
+    p {
+        border: none;
+        border-radius: 0;
+        margin: 0;
+    }
+
+    .siteName {
+        border: 1px solid var(--clr-darkside);
+        border-radius: .5rem;
+        background-color: var(--back-clr-alt);
+        padding: 1rem;
+    }
+
+    .siteName h2 {
+        margin-bottom: 1rem;
+    }
+
+    .siteName p {
+        max-width: 400px;
+        margin: 0 auto;
+        text-align: center;
+        padding: .5rem 1rem;
+    }
+}
