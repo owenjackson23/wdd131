@@ -1,11 +1,3 @@
-const headerNav = document.querySelector('.navigation');
-const hamButton = document.querySelector('#menu');
-
-// Toggle the navigation menu when the hamburger button is clicked
-hamButton.addEventListener('click', () => {
-    headerNav.classList.toggle('show');
-    hamButton.classList.toggle('show');
-});
 
 const temples = [
     {
@@ -90,6 +82,41 @@ const temples = [
     }
 ];
 
+const headerNav = document.querySelector('.navigation');
+const hamButton = document.querySelector('#menu');
+
+const homeLink = document.querySelector('#home');
+const oldLink = document.querySelector('#old');
+const newLink = document.querySelector('#new');
+const largeLink = document.querySelector('#large');
+const smallLink = document.querySelector('#small');
+
+// Toggle the navigation menu when the hamburger button is clicked
+hamButton.addEventListener('click', () => {
+    headerNav.classList.toggle('show');
+    hamButton.classList.toggle('show');
+});
+
+homeLink.addEventListener('click', () => {
+    displayTemples(temples);
+});
+
+oldLink.addEventListener('click', () => {
+    displayTemples(filterOldTemples(temples));
+});
+
+newLink.addEventListener('click', () => {
+    displayTemples(filterNewTemples(temples));
+});
+
+largeLink.addEventListener('click', () => {
+    displayTemples(filterLargeTemples(temples));
+});
+
+smallLink.addEventListener('click', () => {
+    displayTemples(filterSmallTemples(temples));
+});
+
 // Create temple cards
 function displayTemples(temples) {
     const templeCards = document.querySelector('.templeCards');
@@ -109,6 +136,42 @@ function displayTemples(temples) {
 
         templeCards.appendChild(card);
     });
+}
+
+// Creates a new array of temples dedicated before 1900
+function filterOldTemples(temples) {
+    const oldTemples = temples.filter(temple => {
+        const dedicatedDate = parseInt(temple.dedicated.split(',')[0]);
+        return dedicatedDate < 1900;
+    });
+    return oldTemples;
+}
+
+// Creates a new array of temples dedicated after 2000
+function filterNewTemples(temples) {
+    const newTemples = temples.filter(temple => {
+        const dedicatedDate = parseInt(temple.dedicated.split(',')[0]);
+        return dedicatedDate > 2000;
+    });
+    return newTemples;
+}
+
+// Creates a new array of temples with an area greater than 90,000 sq ft
+function filterLargeTemples(temples) {
+    const largeTemples = temples.filter(temple => {
+        const area = temple.area;
+        return area > 90000;
+    });
+    return largeTemples;
+}
+
+// Creates a new array of temples with an area less than 10,000 sq ft
+function filterSmallTemples(temples) {
+    const smallTemples = temples.filter(temple => {
+        const area = temple.area;
+        return area < 10000;
+    });
+    return smallTemples;
 }
 
 // Display all temples
