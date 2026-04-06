@@ -27,7 +27,7 @@ a {
 nav a {
     color: var(--back-clr-alt);
     font-size: 1.2rem;
-    font-weight: 400;
+    font-weight: 600;
     padding: .5rem 1rem;
     font-family: var(--font-heading);
 }
@@ -44,8 +44,13 @@ h3 {
     font-family: var(--font-heading);
 }
 
+h1 {
+    text-align: center;
+}
+
 header h2 {
     color: var(--clr-header);
+    margin-left: 2rem;
 }
 
 header {
@@ -54,6 +59,28 @@ header {
     justify-content: flex-start;
     align-items: center;
     position: relative;
+}
+
+main {
+    max-width: 500px;
+    margin: 2rem auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+footer {
+    margin: 3rem 0;
+    text-align: center;
+    background-color: var(--back-clr-alt);
+    color: var(--clr-header);
+    padding: 1rem;
+}
+
+figcaption {
+    text-align: center;
+    font-style: italic;
+    margin-top: .5rem;
 }
 
 nav {
@@ -73,6 +100,10 @@ nav {
     display: none;
 }
 
+.navigation li:hover {
+    background-color: var(--back-clr);
+}
+
 .navigation.show {
     background-color: var(--back-clr);
     border: 2px solid var(--back-clr-alt);
@@ -88,7 +119,7 @@ nav {
 
 #menu {
     display: block;
-    padding: .5rem 1rem;
+    padding: .5rem 2rem;
     margin-left: auto;
 }
 
