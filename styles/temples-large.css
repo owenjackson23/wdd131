@@ -1,0 +1,43 @@
+@media (min-width: 600px) {
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 2rem;
+        gap: 2rem;
+    }
+
+    nav {
+        position: static;
+    }
+
+    nav a {
+        color: var(--clr-header);
+    }
+
+    nav a:hover {
+        color: var(--back-clr-alt);
+        background-color: var(--clr-header);
+    }
+
+    .navigation {
+        display: flex;
+        padding: 0;
+        border: none;
+        align-items: center;
+    }
+
+    .navigation li {
+        display: block;
+        padding: .3rem;
+        color: var(--clr-header);
+    }
+
+    .navigation li:hover {
+        background-color: transparent;
+    }
+
+    #menu {
+        display: none;
+    }
+}
