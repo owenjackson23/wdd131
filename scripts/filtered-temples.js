@@ -90,6 +90,7 @@ const oldLink = document.querySelector('#old');
 const newLink = document.querySelector('#new');
 const largeLink = document.querySelector('#large');
 const smallLink = document.querySelector('#small');
+const pageTitle = document.querySelector('.pageTitle');
 
 // Toggle the navigation menu when the hamburger button is clicked
 hamButton.addEventListener('click', () => {
@@ -98,22 +99,27 @@ hamButton.addEventListener('click', () => {
 });
 
 homeLink.addEventListener('click', () => {
+    pageTitle.innerHTML = "All Temples";
     displayTemples(temples);
 });
 
 oldLink.addEventListener('click', () => {
+    pageTitle.innerHTML = "Old Temples";
     displayTemples(filterOldTemples(temples));
 });
 
 newLink.addEventListener('click', () => {
+    pageTitle.innerHTML = "New Temples";
     displayTemples(filterNewTemples(temples));
 });
 
 largeLink.addEventListener('click', () => {
+    pageTitle.innerHTML = "Large Temples";
     displayTemples(filterLargeTemples(temples));
 });
 
 smallLink.addEventListener('click', () => {
+    pageTitle.innerHTML = "Small Temples";
     displayTemples(filterSmallTemples(temples));
 });
 
