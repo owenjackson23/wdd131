@@ -1,0 +1,135 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+form {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    margin: 2em;
+    padding: 2em;
+    border: 1px solid #ccc;
+    border-radius: .3em;
+}
+
+.select-product {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 1em 1em;
+    grid-column: 1 / 5;
+}
+
+fieldset {
+    padding: .6em;
+    width: 5rem;
+    margin: 1em auto;
+    border: 1px solid #ccc;
+    border-radius: .3em;
+    grid-column: 1 / 5;
+}
+
+legend {
+    text-align: center;
+    padding: 0 .1em;
+}
+
+input[type="radio"] {
+    display: none;
+    position: relative;
+    caret-color: #000;
+}
+
+.stars {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+}
+
+.stars>label {
+    color: #ffd700;
+    width: .8em;
+    height: .6em;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    caret-color: #000;
+}
+
+.stars>label:hover {
+    color: #000;
+}
+
+.stars>label::before {
+    content: "☆";
+}
+
+.stars input:checked~label::before {
+    content: "★";
+}
+
+.date {
+    display: flex;
+    flex-direction: column;
+    grid-column: 1 / 5;
+    justify-self: center;
+    width: 60%;
+    margin: 1em 0;
+}
+
+.features {
+    display: flex;
+    flex-direction: column;
+    padding: .1em .5em;
+    grid-column: 1 / 5;
+    border: 1px solid #ccc;
+    border-radius: .3em;
+    justify-self: center;
+    width: 60%;
+    margin: 1em 0;
+}
+
+.feature {
+    display: flex;
+    gap: .5em;
+    margin: 0 1em;
+}
+
+.writReview {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    grid-column: 1 / 5;
+}
+
+.writReview textarea {
+    height: 100px;
+}
+
+.userName {
+    display: flex;
+    flex-direction: column;
+    grid-column: 1 / 5;
+    margin: 1em auto;
+    max-width: 250px;
+    width: 40%;
+}
+
+button {
+    grid-column: 1 / 5;
+    margin: 1em auto;
+    padding: .1em .5em;
+}
+
+@media (min-width: 900px) {
+    .date {
+        grid-column: 1 / 3;
+    }
+
+    .features {
+        grid-column: 3 / 5;
+    }
+}
