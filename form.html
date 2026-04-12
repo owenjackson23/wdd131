@@ -8,15 +8,16 @@
     <meta name="author" content="Owen Jackson">
     <meta name="description" content="This page contains an HTML form for leaving a review for a product">
     <link rel="stylesheet" href="styles/form.css">
+    <script src="scripts/getdates.js" defer></script>
     <script src="scripts/form.js" defer></script>
 </head>
 
 <body>
-    <header></header>
+    <header>
+        <h1>Product Review</h1>
+    </header>
 
     <form action="review.html" method="get">
-        <h1>Product Review</h1>
-
         <div class="select-product">
             <label for="product">Product:</label>
             <select id="product" name="product" required>
@@ -82,7 +83,14 @@
         <button type="submit">Submit Review</button>
     </form>
 
-    <footer></footer>
+    <footer>
+        <footer>
+            <p>
+                ©<span id="currentyear"></span> - Owen Jackson - Disney World
+            </p>
+            <p id="lastModified"></p>
+        </footer>
+    </footer>
 
 </body>
 
