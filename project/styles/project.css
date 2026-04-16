@@ -146,6 +146,7 @@ button {
     padding: .2rem .4rem;
     background-color: var(--clr-heading);
     font-size: 1.1em;
+    color: var(--back-clr);
 }
 
 button:hover {

@@ -127,6 +127,13 @@ displayContent(currentPage);
 hamButton.addEventListener('click', () => {
     headerNav.classList.toggle('show');
     hamButton.classList.toggle('show');
+
+    const isOpen = hamButton.classList.contains("show");
+    // Changes the aria label for the hamButton
+    hamButton.setAttribute(
+        "aria-label",
+        isOpen ? "Close navigation menu" : "Open navigation menu"
+    );
 });
 
 // Create food cards
@@ -217,13 +224,15 @@ function filterCustomSouv(souvenirs) {
 }
 
 // Adds filtered souvenirs to form
-filterCustomSouv(souvenirs).forEach(souvenir => {
-    const option = document.createElement("option");
-    option.value = souvenir.id;
-    option.innerHTML = souvenir.souvName;
+if (currentPage.endsWith("/souvenirs.html")) {
+    filterCustomSouv(souvenirs).forEach(souvenir => {
+        const option = document.createElement("option");
+        option.value = souvenir.id;
+        option.innerHTML = souvenir.souvName;
 
-    experienceSelect.appendChild(option);
-});
+        experienceSelect.appendChild(option);
+    });
+}
 
 // Saves form reservation to localStorage
 if (reservationForm) {
