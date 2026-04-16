@@ -70,30 +70,40 @@ const rides = [
 the souvenirs */
 const souvenirs = [
     {
+        custom: false,
+        id: "41782",
         souvName: "Kyber Crystal",
         price: "$24.99",
         location: "Dok-Ondar's Den of Antiquities",
         imageUrl: "https://cdn-ssl.s7.shopdisney.com/is/image/DisneyShopping/1814047620051?fmt=webp&qlt=70&wid=1088&hei=1088"
     },
     {
+        custom: false,
+        id: "98351",
         souvName: "Collectible Lightsaber Hilt",
         price: "$169.99",
         location: "Dok-Ondar's Den of Antiquities",
         imageUrl: "https://cdn-ssl.s7.shopdisney.com/is/image/DisneyShopping/1814047620100?fmt=webp&qlt=70&wid=1564&hei=1564"
     },
     {
+        custom: false,
+        id: "35123",
         souvName: "Jedi/Sith Holocron",
         price: "$59.99",
         location: "Dok-Ondar's Den of Antiquities",
         imageUrl: "https://cdn-ssl.s7.shopdisney.com/is/image/DisneyShopping/1814047620045-3?fmt=webp&qlt=70&wid=1088&hei=1088"
     },
     {
+        custom: true,
+        id: "38862",
         souvName: "Custom Droid",
         price: "$129.99",
         location: "Droid Depot",
         imageUrl: "https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/630/354/75/vision-dam/digital/parks-platform/parks-global-assets/disney-world/shopping/droid-depot/0430ZM_01375AS_JRoh-2-16x9.jpg?2024-08-13T19:07:27+00:00"
     },
     {
+        custom: true,
+        id: "61941",
         souvName: "Custom Lightsaber",
         price: "$129.99",
         location: "Savi's Workshop",
@@ -102,8 +112,13 @@ const souvenirs = [
 ]
 
 const currentPage = window.location.pathname;
+
 const headerNav = document.querySelector('.navigation');
 const hamButton = document.querySelector('#menu');
+
+const experienceSelect = document.getElementById("experience");
+
+displayContent(currentPage);
 
 // Toggle the navigation menu when the hamburger button is clicked
 hamButton.addEventListener('click', () => {
@@ -173,6 +188,7 @@ function displaySouvenirs(souvenirs) {
     });
 }
 
+// Displays cards based on the current page
 function displayContent(currentPage) {
     if (currentPage.endsWith("/rides.html")) {
         displayRides(rides);
@@ -188,4 +204,20 @@ function displayContent(currentPage) {
     }
 }
 
-displayContent(currentPage);
+// Creates a new array of custom souvenirs from the souvenirs array
+function filterCustomSouv(souvenirs) {
+    const customSouv = souvenirs.filter(souvenir => {
+        const isCustom = souvenir.custom;
+        return isCustom;
+    });
+    return customSouv;
+}
+
+// Adds filtered souvenirs to form
+filterCustomSouv(souvenirs).forEach(souvenir => {
+    const option = document.createElement("option");
+    option.value = souvenir.id;
+    option.innerHTML = souvenir.souvName;
+
+    experienceSelect.appendChild(option);
+});
