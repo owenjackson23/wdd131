@@ -1,5 +1,5 @@
 /* Array containing information about 
-the restaurants */
+the rides */
 const rides = [
     {
         rideName: "Millenium Falcon: Smugglers Run",
@@ -32,8 +32,8 @@ function displayRides(rides) {
 
         card.innerHTML = `
             <h2>${ride.rideName}</h2>
-            <p><strong>Height Requirement: </strong> ${ride.minHeight}</p>
-            <p><strong>Description: </strong> ${ride.description}</p>
+            <p><strong>Height Requirement:</strong> ${ride.minHeight}</p>
+            <p><strong>Description:</strong> ${ride.description}</p>
             <img src="${ride.imageUrl}" alt="${ride.rideName} image" loading="lazy" width="300">
             `;
 
