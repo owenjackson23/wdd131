@@ -43,7 +43,7 @@ const restaurants = [
     }
 ]
 
-// Create temple cards
+// Create food cards
 function displayFood(restaurants) {
     const foodCards = document.querySelector('.foodCards');
 
