@@ -272,10 +272,42 @@ fieldset {
 
 @media (min-width: 800px) {
 
+    header h2 {
+        position: static;
+        margin: 0 auto;
+    }
+
+    header {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    nav {
+        margin-left: auto;
+    }
+
     .foodCards,
     .rideCards,
     .souvCards {
         display: grid;
         grid-template-columns: 1fr 1fr;
+    }
+
+    .navigation {
+        display: flex;
+        flex-direction: row;
+
+        padding: 0.5rem;
+        border: var(--border-darkside);
+        background-color: var(--back-clr-alt);
+    }
+
+    .navigation li {
+        display: block;
+    }
+
+    #menu {
+        display: none;
+        margin-right: 0;
     }
 }
