@@ -34,6 +34,68 @@
     <main>
         <h1>Souvenirs</h1>
         <div class="souvCards"></div>
+
+        <form action="reservation.html" method="get">
+            <h2>Custom Souvenir Experience</h2>
+            <div class="participant">
+                <label for="name">*Participant's Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+            <div class="select-experience">
+                <label for="experience">*Souvenir Experience:</label>
+                <select id="experience" name="experience" required>
+                    <option value="" disabled selected>Select an experience</option>
+
+                </select>
+            </div>
+
+            <div class="date">
+                <label for="reserveDate">*Reserve a Date:</label>
+                <input type="date" id="installDate" name="installDate" required>
+            </div>
+
+            <fieldset>
+                <legend>*Reserve a Time</legend>
+                <div class="times">
+                    <div class="time">
+                        <input type="radio" id="time1" name="time" value="1" required>
+                        <label for="time1">11:00 AM</label>
+                    </div>
+                    <div class="time">
+                        <input type="radio" id="time2" name="time" value="2" required>
+                        <label for="time2">11:30 AM</label>
+                    </div>
+
+                    <div class="time">
+                        <input type="radio" id="time3" name="time" value="3" required>
+                        <label for="time3">12:30 PM</label>
+                    </div>
+
+                    <div class="time">
+                        <input type="radio" id="time4" name="time" value="4" required>
+                        <label for="time4">1:00 PM</label>
+                    </div>
+
+                    <div class="time">
+                        <input type="radio" id="time5" name="time" value="5" required>
+                        <label for="time5">1:30 PM</label>
+                    </div>
+
+                    <div class="time">
+                        <input type="radio" id="time6" name="time" value="6" required>
+                        <label for="time6">2:00 PM</label>
+                    </div>
+                </div>
+            </fieldset>
+
+            <div class="notes">
+                <label for="notes">Additional Comments:</label>
+                <textarea id="notes" name="notes" placeholder="Type any additional notes here."></textarea>
+            </div>
+
+            <button type="submit">Finish Reservation</button>
+        </form>
     </main>
 
     <footer>
