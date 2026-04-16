@@ -258,3 +258,23 @@ fieldset {
 #menu.show::before {
     content: '×';
 }
+
+.receipt {
+    margin: 0 auto;
+    padding: .5rem;
+    text-align: center;
+    width: 320px;
+    border: var(--border-lightside);
+    border-radius: .5rem;
+    background-color: var(--back-clr-alt);
+}
+
+@media (min-width: 800px) {
+
+    .foodCards,
+    .rideCards,
+    .souvCards {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+}
