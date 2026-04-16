@@ -111,13 +111,16 @@ const souvenirs = [
     }
 ]
 
+// Variables
 const currentPage = window.location.pathname;
 
 const headerNav = document.querySelector('.navigation');
 const hamButton = document.querySelector('#menu');
 
 const experienceSelect = document.getElementById("experience");
+const reservationForm = document.getElementById("reservationForm");
 
+// Displays cards for the page
 displayContent(currentPage);
 
 // Toggle the navigation menu when the hamburger button is clicked
@@ -221,3 +224,12 @@ filterCustomSouv(souvenirs).forEach(souvenir => {
 
     experienceSelect.appendChild(option);
 });
+
+// Saves form reservation to localStorage
+if (reservationForm) {
+    reservationForm.addEventListener("submit", () => {
+        const selectedExperience = experienceSelect.value;
+
+        localStorage.setItem("reservation", selectedExperience);
+    });
+}
