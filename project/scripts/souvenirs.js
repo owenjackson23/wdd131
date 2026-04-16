@@ -44,9 +44,9 @@ function displaySouvenirs(souvenirs) {
 
         card.innerHTML = `
             <h2>${souvenir.souvName}</h2>
+            <img src="${souvenir.imageUrl}" alt="${souvenir.souvName} image" loading="lazy" width="300">
             <p><strong>Price:</strong> ${souvenir.price}</p>
             <p><strong>Location:</strong> ${souvenir.location}</p>
-            <img src="${souvenir.imageUrl}" alt="${souvenir.souvName} image" loading="lazy" width="300">
             `;
 
         souvCards.appendChild(card);

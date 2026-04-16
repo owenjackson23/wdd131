@@ -54,11 +54,11 @@ function displayFood(restaurants) {
 
         card.innerHTML = `
             <h2>${restaurant.restName}</h2>
+            <img src="${restaurant.imageUrl}" alt="${restaurant.restName} image" loading="lazy" width="300">
             <p><strong>Type:</strong> ${restaurant.type}</p>
             <p><strong>Cuisine:</strong> ${restaurant.cuisine}</p>
             <p><strong>Price Range:</strong> ${restaurant.priceRange}</p>
             <p><strong>Popular Menu Item:</strong> ${restaurant.menuItem}</p>
-            <img src="${restaurant.imageUrl}" alt="${restaurant.restName} image" loading="lazy" width="300">
             `;
 
         foodCards.appendChild(card);

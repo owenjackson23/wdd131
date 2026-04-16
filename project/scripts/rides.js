@@ -32,9 +32,9 @@ function displayRides(rides) {
 
         card.innerHTML = `
             <h2>${ride.rideName}</h2>
+            <img src="${ride.imageUrl}" alt="${ride.rideName} image" loading="lazy" width="300">
             <p><strong>Height Requirement:</strong> ${ride.minHeight}</p>
             <p><strong>Description:</strong> ${ride.description}</p>
-            <img src="${ride.imageUrl}" alt="${ride.rideName} image" loading="lazy" width="300">
             `;
 
         rideCards.appendChild(card);
